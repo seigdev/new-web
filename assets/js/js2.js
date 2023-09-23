@@ -112,7 +112,7 @@ cancel.addEventListener("click", function () {
   guideDisplay2.style.display = "none";
   guideDisplay.style.display = "none";
   var span = document.querySelector("#span");
-  span.innerHTML = "Choose Keystore File";
+  // span.innerHTML = "Choose Keystore File";
   var attr = document.querySelector("#first");
   var attr2 = document.querySelector("#second");
   var attr3 = document.querySelector("#third");
@@ -134,8 +134,8 @@ cancel.addEventListener("click", function () {
   }
 });
 
-var label = document.querySelector("#label");
-label.addEventListener("change", filenaming);
+// var label = document.querySelector("#label");
+// label.addEventListener("change", filenaming);
 
 function filenaming(e) {
   e.preventDefault();
